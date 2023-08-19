@@ -18,6 +18,8 @@ Add your custom tracks to the relevant folder(s) to include it in the pool the g
 
 Check the following page for formats supported by Unity: https://docs.unity3d.com/Manual/AudioFiles.html  
   
+This mod has no music tracks included.  
+  
 Install  
 =======  
 1. Install BepInEx - https://docs.bepinex.dev/articles/user_guide/installation/index.html Stable version 5.4.21 x86.  
