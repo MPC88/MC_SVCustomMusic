@@ -6,7 +6,7 @@ Uninstall any mods and attempt to replicate issues before reporting any suspecte
   
 Function  
 ========  
-Add custom music tracks!
+Add custom music tracks.
 
 After first run, the following folders will be created in your BepInEx plugins folder:  
 .\plugins\MCSVCustomMusic\Battle\  
