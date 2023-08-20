@@ -1,5 +1,7 @@
 ﻿using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.Logging;
+using HarmonyLib;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -12,14 +14,15 @@ namespace MC_SVCustomMusic
     {
         public const string pluginGuid = "mc.starvalor.custommusic";
         public const string pluginName = "SV Custom Music";
-        public const string pluginVersion = "1.0.0";
+        public const string pluginVersion = "1.1.0";
 
         private enum SongType { mainmenu, battle, chill, tense };
 
+        private static ConfigEntry<bool> cfgRandomise;
+        private static ConfigEntry<bool> cfgReplace;
+
         private string fld_Plugins = "";
-
         private bool startedLoading = false;
-
         private readonly string[] folders =
         {
             "/MCSVCustomMusic/MainMenu/",
@@ -36,7 +39,20 @@ namespace MC_SVCustomMusic
 
         public void Awake()
         {
+            Harmony.CreateAndPatchAll(typeof(Main));
+
             fld_Plugins = Path.GetDirectoryName(GetType().Assembly.Location);
+
+            cfgReplace = Config.Bind<bool>(
+                "Config",
+                "Replace original tracks",
+                false,
+                "Replace original tracks or add new tracks to existing pool.");
+            cfgRandomise = Config.Bind<bool>(
+                "Config",
+                "Randomise next track",
+                false,
+                "Randomise next track or use default sequential selection.");
 
             foreach (string folder in folders)
                 if (!Directory.Exists(fld_Plugins + folder))
@@ -89,7 +105,10 @@ namespace MC_SVCustomMusic
         private void LoadSongs(SongType type, AudioClipData[] originals)
         {
             string[] fileList = Directory.GetFiles(fld_Plugins + folders[(int)type]);
-            clipData[(int)type] = new List<AudioClipData>(originals);
+            if(cfgReplace.Value && fileList.Length > 0)
+                clipData[(int)type] = new List<AudioClipData>();
+            else
+                clipData[(int)type] = new List<AudioClipData>(originals);
             todoCounts[(int)type] = fileList.Length;
 
             if (fileList != null)
@@ -117,6 +136,31 @@ namespace MC_SVCustomMusic
             clipData[(int)type].Add(acd);
             log.LogInfo("Successfully loaded custom music " + file);
             doneCnts[(int)type]++;
+        }
+
+        [HarmonyPatch(typeof(Music), nameof(Music.Play))]
+        [HarmonyPostfix]
+        private static void MusicPlay_Post(int type, ref int ___nextMenu, ref int ___nextChill, ref int ___nextTense, ref int ___nextBattle)
+        {
+            if (!cfgRandomise.Value)
+                return;
+
+            //0 Main, 2 = chill, 3 = tense, 4 = battle
+            switch(type)
+            {
+                case 0:
+                    ___nextMenu = Random.Range(0, GameManager.instance.musicData.mainMenu.Length - 1);
+                    break;
+                case 2:
+                    ___nextChill = Random.Range(0, GameManager.instance.musicData.chill.Length - 1);
+                    break;
+                case 3:
+                    ___nextTense = Random.Range(0, GameManager.instance.musicData.tense.Length - 1);
+                    break;
+                case 4:
+                    ___nextBattle = Random.Range(0, GameManager.instance.musicData.battle.Length - 1);
+                    break;
+            }
         }
     }
 }
