@@ -20,8 +20,6 @@ Check the following page for formats supported by Unity: https://docs.unity3d.co
   
 Note that the tracks will only be added (or originals replaced) once all tracks of a particular category have been loaded by the mod.  
   
-This mod has no music tracks included.  
-  
 Install  
 =======  
 1. Install BepInEx - https://docs.bepinex.dev/articles/user_guide/installation/index.html Stable version 5.4.21 x86.  
