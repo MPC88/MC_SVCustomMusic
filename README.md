@@ -18,7 +18,7 @@ Add your custom tracks to the relevant folder(s) to include it in the pool the g
 
 Check the following page for formats supported by Unity: https://docs.unity3d.com/Manual/AudioFiles.html  
   
-Note that the tracks will only be added (or originals replace) once all tracks of a particular category have been loaded by the mod.  
+Note that the tracks will only be added (or originals replaced) once all tracks of a particular category have been loaded by the mod.  
   
 This mod has no music tracks included.  
   
