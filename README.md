@@ -40,21 +40,21 @@ Credits
 =======  
 All tracks in the .zip are from https://pixabay.com/ converted from .mp3 to .ogg.
   
-Battle1.mp3 - Sci-Fi Cyberpunk Trailer, Stringer_Bell (trimmed)  
-Battle2.mp3 - Digital Adrenaline (Background, Vlog Music), Top-Flow-Production (trimmed)  
-Battle3.mp3 - Energy Zoom, Keyframe_Audio (trimmed)  
-Battle4.mp3 - Exit Dirty, Keyframe_Audio (trimmed)  
+Battle1.ogg - Sci-Fi Cyberpunk Trailer, Stringer_Bell (trimmed)  
+Battle2.ogg - Digital Adrenaline (Background, Vlog Music), Top-Flow-Production (trimmed)  
+Battle3.ogg - Energy Zoom, Keyframe_Audio (trimmed)  
+Battle4.ogg - Exit Dirty, Keyframe_Audio (trimmed)  
   
-Tense1.mp3 - Space Ambient Sci-Fi, Lexin_Music  
-Tense2.mp3 - Corporate Power (Suspense Sci-Fi Background), soundbay  
-Tense3.mp3 - Dark Room, Keyframe_Audio  
-Tense4.mp3 - Darkness, Defekt_Maschine  
-Tense5.mp3 - Ambient Suspense Atmosphere, Stringer_Bell  
-Tense6.mp3 - Mysterious Pulsing Synths - Draco, Keyframe_Audio  
-   
-Chill1.mp3 - Cinematic Cello, Lexin_Music  
-Chill2.mp3 - Interstellar Space Travel, Lexin_Music  
-Chill3.mp3 - Space trip, Playsound  
-Chill4.mp3 - Space, The_Mountain  
-Chill5.mp3 - Futuristic Sci Fi Cinematic, AudioCoffee  
-Chill6.mp3 - Epic Technology, www_lokhmatovmusic_com  
+Tense1.ogg - Space Ambient Sci-Fi, Lexin_Music  
+Tense2.ogg - Corporate Power (Suspense Sci-Fi Background), soundbay  
+Tense3.ogg - Dark Room, Keyframe_Audio  
+Tense4.ogg - Darkness, Defekt_Maschine  
+Tense5.ogg - Ambient Suspense Atmosphere, Stringer_Bell  
+Tense6.ogg - Mysterious Pulsing Synths - Draco, Keyframe_Audio  
+  
+Chill1.ogg - Cinematic Cello, Lexin_Music  
+Chill2.ogg - Interstellar Space Travel, Lexin_Music  
+Chill3.ogg - Space trip, Playsound  
+Chill4.ogg - Space, The_Mountain  
+Chill5.ogg - Futuristic Sci Fi Cinematic, AudioCoffee  
+Chill6.ogg - Epic Technology, www_lokhmatovmusic_com  
